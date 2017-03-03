@@ -100,6 +100,10 @@
         </action>
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
+		<action path="/ListamModulo"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=RegistroEstados.jsp" />
+		<action path="/ListaNombres"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=RegistroNombres.jsp" />
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
         <action path="/irAyuda"
