@@ -26,7 +26,7 @@ public final class MCUListarAutos
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    public ActionForward solicitarListarEstados(
+    public ActionForward solicitarListarAutos(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
@@ -45,10 +45,10 @@ public final class MCUListarAutos
             return (mapping.findForward("cancelar"));
         }
 
-        FormaListadoEstados forma = (FormaListadoEstados)form;
+        FormaListadoAutos forma = (FormaListadoAutos)form;
 
-        ManejadorEstados mr = new ManejadorEstados();
-        Collection resultado = mr.listarEstados();
+        ManejadorAutos mr = new ManejadorAutos();
+        Collection resultado = mr.listarAutos();
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
@@ -57,7 +57,7 @@ public final class MCUListarAutos
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setEstados( resultado );
+                forma.setAutos( resultado );
             }
             return (mapping.findForward("exito"));
         } else {
@@ -69,7 +69,7 @@ public final class MCUListarAutos
         }
     }
 	
-	public ActionForward buscarEstado(
+	public ActionForward buscarAuto(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
@@ -77,7 +77,7 @@ public final class MCUListarAutos
             throws Exception {
 
         if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarEstados");
+            log.debug(">solicitarListarAutos");
         }
 
         // Verifica si la acción fue cancelada por el usuario
@@ -88,10 +88,10 @@ public final class MCUListarAutos
             return (mapping.findForward("cancelar"));
         }
 
-        FormaListadoEstados forma = (FormaListadoEstados)form;
+        FormaListadoAutos forma = (FormaListadoAutos)form;
 
-        ManejadorEstados mr = new ManejadorEstados();
-        Collection resultado = mr.listarEstadoPorNombre(forma.getNombre());
+        ManejadorAutos mr = new ManejadorAutos();
+        Collection resultado = mr.listarAutoPorNombre(forma.getNombre());
 		log.debug("Resultado "+resultado);
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
@@ -100,7 +100,7 @@ public final class MCUListarAutos
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setEstados( resultado );
+                forma.setAutos( resultado );
             }
             return (mapping.findForward("exito"));
         } else {

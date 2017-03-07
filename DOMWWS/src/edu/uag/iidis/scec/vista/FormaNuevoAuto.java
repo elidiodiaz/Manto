@@ -67,6 +67,9 @@ public final class FormaNuevoAuto
                       HttpServletRequest request) {
         nombre=null;
         descripcion=null;
+        cantidad = 0;
+        ganancias = null;
+        anio = 0;
     }
 
 
