@@ -25,14 +25,14 @@ import edu.uag.iidis.scec.modelo.User;
 public class AuthorizationFilter implements Filter {
 	private String[] roleNames;
 	private String onErrorUrl;
-	
-    private Log log = LogFactory.getLog(AuthorizationFilter.class);	
-	
+
+    private Log log = LogFactory.getLog(AuthorizationFilter.class);
+
 	public void init(FilterConfig arg0) throws ServletException {
-		
+
 		// inicializacion de lo que se necesite en el filtro
-		
-		String roles = arg0.getInitParameter("roles"); 
+
+		String roles = arg0.getInitParameter("roles");
 	    if (roles == null || "".equals(roles)) {
 	      roleNames = new String[0];
 	    }
@@ -40,18 +40,17 @@ public class AuthorizationFilter implements Filter {
 	      roles.trim();
 	      roleNames = roles.split(" ");
 	    }
-	    onErrorUrl = arg0.getInitParameter("onError"); 
+	    onErrorUrl = arg0.getInitParameter("onError");
 	    if (onErrorUrl == null || "".equals(onErrorUrl)) {
-	      onErrorUrl = "irLogin.dd"; 
+	      onErrorUrl = "irLogin.dd";
 	    }
 	}
 
-	public void doFilter(ServletRequest arg0, ServletResponse arg1,
-			FilterChain arg2) throws IOException, ServletException {
-		HttpServletRequest req = (HttpServletRequest) arg0; 
+	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) throws IOException, ServletException {
+		HttpServletRequest req = (HttpServletRequest) arg0;
 	    HttpServletResponse res = (HttpServletResponse) arg1;
 	    HttpSession session = req.getSession();
-	    User user = (User) session.getAttribute("user"); 
+	    User user = (User) session.getAttribute("user");
 	    ActionErrors errors = new ActionErrors();
 	    if (user == null) {
 	      errors.add(ActionErrors.GLOBAL_MESSAGE,
@@ -79,10 +78,10 @@ public class AuthorizationFilter implements Filter {
 	    }
 	    else {
 			log.debug(">En el filtro - Con Errores");
-			req.setAttribute(Globals.ERROR_KEY, errors); 
+			req.setAttribute(Globals.ERROR_KEY, errors);
 	      req.getRequestDispatcher(onErrorUrl).forward(req, res);
 	    }
-	}	
+	}
 	
 	public void destroy() {	}
 }

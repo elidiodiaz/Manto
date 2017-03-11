@@ -21,8 +21,7 @@ public class Auto extends ClaseBase
     private String descripcion;
     private long cantidad;
     private String ganancias;
-    private int anio;
-
+    private String anio;
 
     public Auto() {
     }
@@ -31,12 +30,12 @@ public class Auto extends ClaseBase
         this.id = id;
     }
 
-    public Auto(String nombre, String descripcion, long cantidad, String ganancias, int anio){
+    public Auto(String nombre, String descripcion, long cantidad, String ganancias, String anio){
         this.nombre=nombre;
         this.descripcion=descripcion;
         this.cantidad = cantidad;
         this.ganancias = ganancias;
-        this.anio = anio;
+        this.anio=anio;
     }
 
     /**
@@ -125,9 +124,9 @@ public class Auto extends ClaseBase
 
     /**
      * Regresa el año del rol.
-     * @return int
+     * @return String
      */
-    public int getAnio() {
+    public String getAnio() {
         return this.anio;
     }
 
@@ -135,7 +134,7 @@ public class Auto extends ClaseBase
      * Establece el año del rol.
      * @return void
      */
-    public void setAnio(int anio) {
+    public void setAnio(String anio) {
         this.anio = anio;
     }
 }

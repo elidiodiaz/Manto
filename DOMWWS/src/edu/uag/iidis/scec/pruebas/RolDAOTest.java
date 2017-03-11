@@ -15,11 +15,9 @@ import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 
 import java.util.*;
 
-
 public class RolDAOTest extends TestCase {
 
     private static RolDAO dao = null;
-
 
     protected void setUp() throws Exception {
         dao = new RolDAO();

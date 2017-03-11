@@ -20,6 +20,10 @@ public final class FormaListadoAutos
     private Collection autos;
     private int contador;
 	private String nombre;
+    private String descripcion;
+    private String ganancias;
+    private long cantidad;
+    private String anio;
 
     public void setAutos(Collection autos) {
         this.autos = autos;
@@ -43,10 +47,47 @@ public final class FormaListadoAutos
 		this.nombre=nombre;
 	}
 
+    public String getDescripcion(){
+        return (this.descripcion);
+    }
+
+    public String getGanancias(){
+        return (this.ganancias);
+    }
+
+    public Long getCantidad(){
+        return (this.cantidad);
+    }
+
+    public String getAnio(){
+        return (this.anio);
+    }
+
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+
+    public void setGanancias(String ganancias){
+        this.ganancias = ganancias;
+    }
+
+    public void setCantidad(Long cantidad){
+        this.cantidad = cantidad;
+    }
+
+    public void setAnio(String anio){
+        this.anio = anio;
+    }
+
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         contador=0;
         autos =null;
+        nombre = null;
+        descripcion = null;
+        ganancias = null;
+        cantidad = 0;
+        anio = null;
     }
 
 

@@ -13,14 +13,13 @@ import org.apache.struts.validator.ValidatorForm;
  *
  * @author Elidio Diaz
  */
-public final class FormaNuevoAuto
-        extends ValidatorForm {
+public final class FormaNuevoAuto extends ValidatorForm {
 
     private String nombre;
     private String descripcion;
     private long cantidad;
     private String ganancias;
-    private int anio;
+    private String anio;
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -29,7 +28,6 @@ public final class FormaNuevoAuto
     public String getNombre() {
         return (this.nombre);
     }
-
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
@@ -55,11 +53,11 @@ public final class FormaNuevoAuto
         this.ganancias = ganancias;
     }
 
-    public int getAnio(){
+    public String getAnio(){
         return (this.anio);
     }
 
-    public void setAnio(){
+    public void setAnio(String anio){
         this.anio = anio;
     }
 
@@ -69,20 +67,15 @@ public final class FormaNuevoAuto
         descripcion=null;
         cantidad = 0;
         ganancias = null;
-        anio = 0;
+        anio = null;
     }
 
 
-    public ActionErrors validate(ActionMapping mapping,
-                                 HttpServletRequest request) {
-
+    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         // Ejecuta las validaciones proporcionadas por Struts-Validator
         ActionErrors errores = super.validate(mapping, request);
-
         // Validaciones no cubiertas por Struts-Validator
-
         return errores;
-
     }
 
 }

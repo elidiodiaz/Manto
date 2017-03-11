@@ -20,7 +20,7 @@ return confirm("¿Desea eliminar el auto '" + strAutoName + "'?")
 -->
 </script>
 <br>
-<font size='5'><fmt:message key="FormaListadoAutos.titulo" /></font>
+<font size='5'><fmt:message key="formaListadoAutos.titulo" /></font>
 <table cellpadding="0" cellspacing="0" width="60%" border="0">
     <tr>
         <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
@@ -33,16 +33,19 @@ return confirm("¿Desea eliminar el auto '" + strAutoName + "'?")
         </td>
     </tr>
     <tr bgcolor="#CCCCCC">
-     <td><b><fmt:message key="FormaListadoAutos.etiqueta.nombre" /></b></td>
-     <td><b><fmt:message key = "formaListadoAutos.etiqueta.descripcion"/></b></td>
-     <td><b><fmt:message key = "formaListadoAutos.etiqueta.cantidad"/></b></td>
-     <td><b><fmt:message key = "formaListadoAutos.etiqueta.ganancias"/></b></td>
-     <td><b><fmt:message key = "formaListadoAutos.etiqueta.anio"/></b></td>
+     <td><b><fmt:message key="formaListadoAutos.etiqueta.nombre" /></b></td>
+     <td><b><fmt:message key="formaListadoAutos.etiqueta.descripcion"/></b></td>
+     <td><b><fmt:message key="formaListadoAutos.etiqueta.cantidad"/></b></td>
+     <td><b><fmt:message key="formaListadoAutos.etiqueta.ganancias"/></b></td>
+     <td><b><fmt:message key="formaListadoAutos.etiqueta.anio"/></b></td>
     </tr>
     <c:forEach var="auto" items="${formaListadoAutos.autos}">
         <tr>
             <td align="left" width="20%"><c:out value="${auto.nombre}"/></td>
-            <td align="left" width="60%"><c:out value="${auto.descripcion}"/></td>
+            <td align="left" width="40%"><c:out value="${auto.descripcion}"/></td>
+            <td align="left" width="20%"><c:out value="${auto.cantidad}"/></td>
+            <td align="left" width="20%"><c:out value="${auto.ganancias}"/></td>
+            <td align="left" width="20%"><c:out value="${auto.anio}"/></td>
             <td align="left" width="20%">
                 <a href='solicitarModificarAuto.do?id=<c:out value="${auto.id}"/>'
                    class="HipervinculoAdmon">

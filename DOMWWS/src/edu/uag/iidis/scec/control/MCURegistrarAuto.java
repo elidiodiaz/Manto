@@ -19,11 +19,9 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 
 
-public final class MCURegistrarAuto
-        extends MappingDispatchAction {
+public final class MCURegistrarAuto extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarAuto.class);
-
 
     public ActionForward solicitarRegistroAuto(
                 ActionMapping mapping,
@@ -38,8 +36,6 @@ public final class MCURegistrarAuto
 
         return (mapping.findForward("exito"));
     }
-
-
 
     public ActionForward procesarRegistroAuto(
                 ActionMapping mapping,
@@ -60,43 +56,37 @@ public final class MCURegistrarAuto
             return (mapping.findForward("cancelar"));
         }
 
-        
+
         // Se obtienen los datos para procesar el registro
         FormaNuevoAuto forma = (FormaNuevoAuto)form;
 
-        Auto auto = new Auto(forma.getNombre(),
-                          forma.getDescripcion(), forma.getCantidad(), forma.getGanancias(), forma.getAnio());
+        Auto auto = new Auto(forma.getNombre(), forma.getDescripcion(), forma.getCantidad(), forma.getGanancias(), forma.getAnio());
 
         ManejadorAutos mr = new ManejadorAutos();
         int resultado = mr.crearAuto(auto);
 
         ActionMessages errores = new ActionMessages();
         switch (resultado) {
-            case 0:   
+            case 0:
                 return (mapping.findForward("exito"));
 
             case 1:
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.nombreAutoYaExiste",
-                                               forma.getNombre()));                
+                errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.nombreAutoYaExiste", forma.getNombre()));
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             case 3:
                 log.error("Ocurrió un error de infraestructura");
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));                
+                errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.infraestructura"));
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             default:
                 log.warn("ManejadorUsuario.crearUsuario regresó reultado inesperado");
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));                
+                errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.infraestructura"));
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
         }
     }
 
 }
-

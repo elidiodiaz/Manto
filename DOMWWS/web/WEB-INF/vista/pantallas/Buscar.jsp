@@ -4,4 +4,5 @@
 
 <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
 ${lugar.estado}
+${lugar.auto}
 </c:forEach>

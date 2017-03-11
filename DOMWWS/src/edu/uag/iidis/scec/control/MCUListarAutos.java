@@ -20,11 +20,9 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 
 
-public final class MCUListarAutos
-        extends MappingDispatchAction {
+public final class MCUListarAutos extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
-
 
     public ActionForward solicitarListarAutos(
                 ActionMapping mapping,
@@ -53,8 +51,7 @@ public final class MCUListarAutos
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
             if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
+                errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
                 forma.setAutos( resultado );
@@ -62,13 +59,12 @@ public final class MCUListarAutos
             return (mapping.findForward("exito"));
         } else {
             log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+            errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
     }
-	
+
 	public ActionForward buscarAuto(
                 ActionMapping mapping,
                 ActionForm form,
@@ -96,8 +92,7 @@ public final class MCUListarAutos
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
             if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
+                errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
                 forma.setAutos( resultado );
@@ -105,11 +100,9 @@ public final class MCUListarAutos
             return (mapping.findForward("exito"));
         } else {
             log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+            errores.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
-
     }
 }

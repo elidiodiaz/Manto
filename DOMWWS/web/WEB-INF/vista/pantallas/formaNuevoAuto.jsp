@@ -4,7 +4,7 @@
 
 
 <br>
-<font size='5'><fmt:message key="FormaNuevoAuto.titulo" /></font>
+<font size='5'><fmt:message key="formaNuevoAuto.titulo" /></font>
 
 <form id="forma" action="procesarRegistroAuto.do" method="post">
     <table>
@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td align="right">
-                <fmt:message key="FormaNuevoAuto.etiqueta.nombre" />
+                <fmt:message key="formaNuevoAuto.etiqueta.nombre" />
             </td>
             <td align="left">
                 <input type="text"
@@ -43,7 +43,7 @@
             </td>
             <td align="left">
                 <input type="number"
-                       name="descripcion"
+                       name="cantidad"
                        size="50"
                        maxlength="100"
                        value="${formaNuevoAuto.cantidad}" />
@@ -55,7 +55,7 @@
             </td>
             <td align="left">
                 <input type="text"
-                       name="descripcion"
+                       name="ganancias"
                        size="50"
                        maxlength="100"
                        value="${formaNuevoAuto.ganancias}" />
@@ -66,8 +66,8 @@
                 <fmt:message key="formaNuevoAuto.etiqueta.anio" />
             </td>
             <td align="left">
-                <input type="number"
-                       name="descripcion"
+                <input type="text"
+                       name="anio"
                        size="50"
                        maxlength="100"
                        value="${formaNuevoAuto.anio}" />

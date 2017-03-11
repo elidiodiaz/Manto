@@ -17,13 +17,9 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
-
-public final class MCUEliminarAuto
-        extends MappingDispatchAction {
+public final class MCUEliminarAuto extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarAuto.class);
-
 
     public ActionForward procesarEliminarAuto(
                 ActionMapping mapping,
@@ -35,7 +31,7 @@ public final class MCUEliminarAuto
         if (log.isDebugEnabled()) {
             log.debug(">procesarEliminarAuto");
         }
-      
+
         FormaEliminarAuto forma = (FormaEliminarAuto)form;
         ManejadorAutos mr = new ManejadorAutos();
         mr.eliminarAuto(forma.getId());

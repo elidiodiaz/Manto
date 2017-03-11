@@ -36,8 +36,8 @@ public class EstadoDAO {
         try {
             if (bloquear) {
                 estado = (Estado)HibernateUtil.getSession()
-                                                .load(Estado.class, 
-                                                      idEstado, 
+                                                .load(Estado.class,
+                                                      idEstado,
                                                       LockMode.UPGRADE);
             } else {
                 estado = (Estado)HibernateUtil.getSession()
@@ -68,8 +68,8 @@ public class EstadoDAO {
             estados = HibernateUtil.getSession()
                                     .createCriteria(Estado.class)
                                     .list();
-                                    
-              log.debug(">buscarTodos() ---- list " + estados);                                 
+
+              log.debug(">buscarTodos() ---- list " + estados);
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException");
@@ -85,7 +85,7 @@ public class EstadoDAO {
 
 
         Collection estados;
- 
+
         if (log.isDebugEnabled()) {
             log.debug(">buscarPorEjemplo()");
         }
@@ -147,32 +147,32 @@ public class EstadoDAO {
         }
 
         try {
-            
-            
+
+
 //            String consultaCuentaRoles =
 //            "select count(*) from Ciudad r where r.nombre=?";
 //
  //           int resultado =
  //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles, 
+ //                          .find(consultaCuentaRoles,
  //                                nombreRol,
  //                                StringType.INSTANCE)
  //                          .iterator()
  //                          .next()).intValue();
 // de acuerdo al nuevo formato
- 
+
             String hql = "select nombre from Estado where nombre = :nombre";
-            
+
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreEstado);
             }
-        
+
             Query query = HibernateUtil.getSession()
                                         .createQuery(hql);
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< create query ok " );
             }
-			query.setParameter("Nombre", nombreEstado);
+			query.setParameter("nombre", nombreEstado);
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
             }
@@ -184,7 +184,7 @@ public class EstadoDAO {
             if (resultado == 0) {
                return false;
             }
-            
+
             return true;
 
         } catch (HibernateException ex) {
@@ -194,28 +194,28 @@ public class EstadoDAO {
             throw new ExcepcionInfraestructura(ex);
         }
     }
-	
+
 	public Collection buscaEstado(String nombreEstado)
             throws ExcepcionInfraestructura {
-				
+
 		if (log.isDebugEnabled()) {
             log.debug(">existeRol(nombreRol)");
         }
 
         try {
             String hql = "from Estado where nombre like '"+nombreEstado+"%'";
-            
+
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreEstado);
             }
-        
+
             Query query = HibernateUtil.getSession()
                                         .createQuery(hql);
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< create query ok " );
             }
 
-            
+
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
             }
@@ -227,7 +227,7 @@ public class EstadoDAO {
             if (resultado == 0) {
                return results;
             }
-            
+
             return results;
 
         } catch (HibernateException ex) {

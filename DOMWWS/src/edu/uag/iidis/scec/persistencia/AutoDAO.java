@@ -23,9 +23,7 @@ public class AutoDAO {
     public AutoDAO() {
     }
 
-
-    public Auto buscarPorId(Long idAuto, boolean bloquear)
-            throws ExcepcionInfraestructura {
+    public Auto buscarPorId(Long idAuto, boolean bloquear) throws ExcepcionInfraestructura {
 
         Auto auto = null;
 
@@ -35,14 +33,9 @@ public class AutoDAO {
 
         try {
             if (bloquear) {
-                auto = (Auto)HibernateUtil.getSession()
-                                                .load(Auto.class, 
-                                                      idAuto, 
-                                                      LockMode.UPGRADE);
+                auto = (Auto)HibernateUtil.getSession().load(Auto.class, idAuto, LockMode.UPGRADE);
             } else {
-                auto = (Auto)HibernateUtil.getSession()
-                                                .load(Auto.class,
-                                                      idAuto);
+                auto = (Auto)HibernateUtil.getSession().load(Auto.class, idAuto);
             }
         } catch (HibernateException ex) {
             if (log.isWarnEnabled()) {
@@ -54,9 +47,7 @@ public class AutoDAO {
         return auto;
     }
 
-
-    public Collection buscarTodos()
-            throws ExcepcionInfraestructura {
+    public Collection buscarTodos() throws ExcepcionInfraestructura {
 
         Collection autos;
 
@@ -65,11 +56,8 @@ public class AutoDAO {
         }
 
         try {
-            autos = HibernateUtil.getSession()
-                                    .createCriteria(Auto.class)
-                                    .list();
-                                    
-              log.debug(">buscarTodos() ---- list " + autos);                                 
+            autos = HibernateUtil.getSession().createCriteria(Auto.class).list();
+            log.debug(">buscarTodos() ---- list " + autos);
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException");
@@ -79,20 +67,16 @@ public class AutoDAO {
         return autos;
     }
 
-
-    public Collection buscarPorEjemplo(Auto auto)
-            throws ExcepcionInfraestructura {
-
+    public Collection buscarPorEjemplo(Auto auto) throws ExcepcionInfraestructura {
 
         Collection autos;
- 
+
         if (log.isDebugEnabled()) {
             log.debug(">buscarPorEjemplo()");
         }
 
         try {
-            Criteria criteria = HibernateUtil.getSession()
-                                             .createCriteria(Auto.class);
+            Criteria criteria = HibernateUtil.getSession().createCriteria(Auto.class);
             autos = criteria.add(Example.create(auto)).list();
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
@@ -103,9 +87,7 @@ public class AutoDAO {
         return autos;
     }
 
-
-    public void hazPersistente(Auto auto)
-            throws ExcepcionInfraestructura {
+    public void hazPersistente(Auto auto) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
             log.debug(">hazPersistente(auto)");
@@ -121,9 +103,7 @@ public class AutoDAO {
         }
     }
 
-
-    public void hazTransitorio(Auto auto)
-            throws ExcepcionInfraestructura {
+    public void hazTransitorio(Auto auto) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
             log.debug(">hazTransitorio(auto)");
@@ -139,52 +119,47 @@ public class AutoDAO {
         }
     }
 
-    public boolean existeAuto(String nombreAuto)
-            throws ExcepcionInfraestructura {
+    public boolean existeAuto(String nombreAuto) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
             log.debug(">existeRol(nombreRol)");
         }
 
         try {
-            
-            
 //            String consultaCuentaRoles =
 //            "select count(*) from Ciudad r where r.nombre=?";
 //
  //           int resultado =
  //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles, 
+ //                          .find(consultaCuentaRoles,
  //                                nombreRol,
  //                                StringType.INSTANCE)
  //                          .iterator()
  //                          .next()).intValue();
 // de acuerdo al nuevo formato
- 
-            String hql = "select nombre from Autos where nombre = :nombre";
-            
-             if (log.isDebugEnabled()) {
-                 log.debug(hql + nombreAuto);
-            }
-        
-            Query query = HibernateUtil.getSession()
-                                        .createQuery(hql);
+
+            String hql = "select nombre from Auto where nombre = :nombre";
+
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< create query ok " );
+                log.debug(hql + nombreAuto);
             }
-			query.setParameter("Nombre", nombreAuto);
+
+            Query query = HibernateUtil.getSession().createQuery(hql);
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
+                log.debug("<<<<<<<<< create query ok " );
+            }
+			query.setParameter("nombre", nombreAuto);
+            if (log.isDebugEnabled()) {
+                log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
             }
             List results = query.list();
             int resultado = results.size();
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< Result size " + resultado);
+                log.debug("<<<<<<<<< Result size " + resultado);
             }
             if (resultado == 0) {
                return false;
             }
-            
             return true;
 
         } catch (HibernateException ex) {
@@ -194,40 +169,37 @@ public class AutoDAO {
             throw new ExcepcionInfraestructura(ex);
         }
     }
-	
-	public Collection buscaAuto(String nombreAuto)
-            throws ExcepcionInfraestructura {
-				
+
+	public Collection buscaAuto(String nombreAuto) throws ExcepcionInfraestructura {
+
 		if (log.isDebugEnabled()) {
             log.debug(">existeRol(nombreRol)");
         }
 
         try {
-            String hql = "from Auto where nombre like '"+nombreAuto+"%'";
-            
-             if (log.isDebugEnabled()) {
+            String hql = "from Autos where nombre like '"+nombreAuto+"%'";
+
+            if (log.isDebugEnabled()) {
                  log.debug(hql + nombreAuto);
             }
-        
-            Query query = HibernateUtil.getSession()
-                                        .createQuery(hql);
+
+            Query query = HibernateUtil.getSession().createQuery(hql);
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< create query ok " );
             }
 
-            
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
+                log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
             }
             List results = query.list();
             int resultado = results.size();
             if (log.isDebugEnabled()) {
-                 log.debug("<<<<<<<<< Result size " + resultado);
+                log.debug("<<<<<<<<< Result size " + resultado);
             }
             if (resultado == 0) {
                return results;
             }
-            
+
             return results;
 
         } catch (HibernateException ex) {

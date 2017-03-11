@@ -7,14 +7,12 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.validator.ValidatorForm;
 
-
 /**
  * Form bean para el registro de un nuevo auto..
  *
  * @author Elidio Diaz
  */
-public final class FormaEliminarAuto
-        extends ValidatorForm {
+public final class FormaEliminarAuto extends ValidatorForm {
 
     private Long id;
 
@@ -26,23 +24,15 @@ public final class FormaEliminarAuto
         return (this.id);
     }
 
-
-    public void reset(ActionMapping mapping,
-                      HttpServletRequest request) {
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
         id= new Long(0);
     }
 
-
-    public ActionErrors validate(ActionMapping mapping,
-                                 HttpServletRequest request) {
-
+    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         // Ejecuta las validaciones proporcionadas por Struts-Validator
         ActionErrors errores = super.validate(mapping, request);
-
         // Validaciones no cubiertas por Struts-Validator
-
         return errores;
-
     }
 
 }

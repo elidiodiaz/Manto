@@ -24,18 +24,17 @@
 			column="Descripcion"
             type="java.lang.String" />
 
-        <property name = "cantidad"
-            column = "Cantidad"
-            type = "java.lang.Long"/>
+        <property name="cantidad"
+            column="Cantidad"
+            type="java.lang.Long"/>
 
-        <property name = "ganancias"
-            column = "Ganancias"
-            type = "java.lang.String"/>
+        <property name="ganancias"
+            column="Ganancias"
+            type="java.lang.String"/>
 
-        <property name = "anio"
-            column = "Anio"
-            type = "java.lang.String"/>
-
+        <property name="anio"
+            column="Anio"
+            type="java.lang.String"/>
     </class>
 
 </hibernate-mapping>
