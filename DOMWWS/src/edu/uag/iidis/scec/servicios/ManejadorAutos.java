@@ -113,4 +113,26 @@ public class ManejadorAutos {
         }
         return resultado;
     }
+
+    public void modificarAuto(Long id) {
+        if (log.isDebugEnabled()) {
+            log.debug(">modificarAuto(auto)");
+        }
+        try {
+            HibernateUtil.beginTransaction();
+            Auto auto = dao.buscarPorId(id, true);
+            if (auto != null) {
+                dao.hazModificar(auto);
+            }
+            HibernateUtil.commitTransaction();
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            if (log.isWarnEnabled()) {
+                log.warn("<ExcepcionInfraestructura");
+            }
+        } finally {
+            HibernateUtil.closeSession();
+        }
+
+    }
 }

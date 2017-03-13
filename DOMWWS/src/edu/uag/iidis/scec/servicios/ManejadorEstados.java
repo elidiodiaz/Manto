@@ -18,7 +18,6 @@ public class ManejadorEstados {
         dao = new EstadoDAO();
     }
 
-
     public Collection listarEstados() {
         Collection resultado;
 
@@ -30,7 +29,7 @@ public class ManejadorEstados {
             HibernateUtil.beginTransaction();
             resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
-            return resultado;         
+            return resultado;
         } catch (ExcepcionInfraestructura e) {
             HibernateUtil.rollbackTransaction();
             return null;
@@ -38,7 +37,7 @@ public class ManejadorEstados {
             HibernateUtil.closeSession();
         }
     }
-	
+
 	public Collection listarEstadoPorNombre(String nombre) {
         Collection resultado;
 
@@ -51,7 +50,7 @@ public class ManejadorEstados {
             resultado = dao.buscaEstado(nombre);
             log.debug("Consulta "+resultado);
 			HibernateUtil.commitTransaction();
-            return resultado;         
+            return resultado;
         } catch (ExcepcionInfraestructura e) {
             HibernateUtil.rollbackTransaction();
             return null;
@@ -59,14 +58,13 @@ public class ManejadorEstados {
             HibernateUtil.closeSession();
         }
     }
-	
-	
+
     public void eliminarEstado(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarEstado(estado)");
         }
         try {
-            HibernateUtil.beginTransaction();           
+            HibernateUtil.beginTransaction();
             Estado estado = dao.buscarPorId(id, true);
             if (estado != null) {
               dao.hazTransitorio(estado);
@@ -92,8 +90,8 @@ public class ManejadorEstados {
         }
 
         try {
-            HibernateUtil.beginTransaction();           
-            
+            HibernateUtil.beginTransaction();
+
             if (dao.existeEstado(estado.getNombre())) {
                resultado = 1; // Excepción. El nombre de ciudad ya existe
             } else {
@@ -116,5 +114,5 @@ public class ManejadorEstados {
             HibernateUtil.closeSession();
         }
         return resultado;
-    }    
+    }
 }

@@ -23,7 +23,6 @@ public class EstadoDAO {
     public EstadoDAO() {
     }
 
-
     public Estado buscarPorId(Long idEstado, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -54,7 +53,6 @@ public class EstadoDAO {
         return estado;
     }
 
-
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -79,7 +77,6 @@ public class EstadoDAO {
         return estados;
     }
 
-
     public Collection buscarPorEjemplo(Estado estado)
             throws ExcepcionInfraestructura {
 
@@ -103,7 +100,6 @@ public class EstadoDAO {
         return estados;
     }
 
-
     public void hazPersistente(Estado estado)
             throws ExcepcionInfraestructura {
 
@@ -120,7 +116,6 @@ public class EstadoDAO {
             throw new ExcepcionInfraestructura(e);
         }
     }
-
 
     public void hazTransitorio(Estado estado)
             throws ExcepcionInfraestructura {
@@ -139,8 +134,7 @@ public class EstadoDAO {
         }
     }
 
-    public boolean existeEstado(String nombreEstado)
-            throws ExcepcionInfraestructura {
+    public boolean existeEstado(String nombreEstado) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
             log.debug(">existeRol(nombreRol)");
@@ -148,18 +142,17 @@ public class EstadoDAO {
 
         try {
 
+    /* String consultaCuentaRoles =
+            "select count(*) from Ciudad r where r.nombre=?";
 
-//            String consultaCuentaRoles =
-//            "select count(*) from Ciudad r where r.nombre=?";
-//
- //           int resultado =
- //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles,
- //                                nombreRol,
- //                                StringType.INSTANCE)
- //                          .iterator()
- //                          .next()).intValue();
-// de acuerdo al nuevo formato
+            int resultado =
+            ((Integer) HibernateUtil.getSession()
+                           .find(consultaCuentaRoles,
+                                 nombreRol,
+                               StringType.INSTANCE)
+                           .iterator()
+                           .next()).intValue();
+// de acuerdo al nuevo formato*/
 
             String hql = "select nombre from Estado where nombre = :nombre";
 

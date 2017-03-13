@@ -61,8 +61,7 @@ public final class FormaNuevoAuto extends ValidatorForm {
         this.anio = anio;
     }
 
-    public void reset(ActionMapping mapping,
-                      HttpServletRequest request) {
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
         nombre=null;
         descripcion=null;
         cantidad = 0;

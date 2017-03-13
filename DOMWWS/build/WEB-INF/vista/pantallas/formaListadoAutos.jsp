@@ -38,6 +38,7 @@ return confirm("¿Desea eliminar el auto '" + strAutoName + "'?")
      <td><b><fmt:message key="formaListadoAutos.etiqueta.cantidad"/></b></td>
      <td><b><fmt:message key="formaListadoAutos.etiqueta.ganancias"/></b></td>
      <td><b><fmt:message key="formaListadoAutos.etiqueta.anio"/></b></td>
+     <td colspan="2"><b><fmt:message key="formaListadoAutos.etiqueta.administracion" /></b></td>
     </tr>
     <c:forEach var="auto" items="${formaListadoAutos.autos}">
         <tr>

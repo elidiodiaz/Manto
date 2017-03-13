@@ -6,7 +6,7 @@
     color:#000000;
 	text-decoration:none;
   }
-  
+
   .HipervinculoAdmon:hover{
     color:#006666;
 	text-decoration:underline;
@@ -42,7 +42,7 @@
                 <td align="left" width="20%"><c:out value="${estado.nombre}"/></td>
                 <td align="left" width="60%"><c:out value="${estado.descripcion}"/></td>
                 <td align="left" width="20%">
-                    <a href='solicitarModificarEstadp.do?id=<c:out value="${estado.id}"/>'
+                    <a href='solicitarModificarEstado.do?id=<c:out value="${estado.id}"/>'
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoEstados.etiqueta.modificar" />
                     </a>
