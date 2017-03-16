@@ -90,6 +90,19 @@
                    type="edu.uag.iidis.scec.vista.FormaEliminarAuto">
         </form-bean>
     </form-beans>
+	
+	<!-- NOMBRES -->
+	<form-beans>
+        <form-bean name="formaNuevoEntidad"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoEntidad">
+        </form-bean>
+        <form-bean name="formaListadoEntidades"
+                   type="edu.uag.iidis.scec.vista.FormaListadoEntidades">
+        </form-bean>
+        <form-bean name="formaEliminarEntidad"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarEntidad">
+        </form-bean>
+    </form-beans>
 
 
     <!-- Definici�n de Global Forward -->
@@ -165,6 +178,21 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoAutos.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+		
+		
+		<!-- NOMBRES -->
+		 <action path="/solicitarListarEntidades"
+                type="edu.uag.iidis.scec.control.MCUListarEntidades"
+                parameter="solicitarListarEntidades"
+                name="formaListadoEntidades"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoEntidades.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		
 									<!-- AUTOS
 		<action path="/SolicitarListarAutos"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=Autos.jsp" />
@@ -189,6 +217,21 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/ListaAutos.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+		
+		
+		<!-- ENTIDADES -->
+		 <action path="/ListarEntidades"
+                type="edu.uag.iidis.scec.control.MCUListarEntidades"
+                parameter="buscarEntidad"
+                name="formaListadoEntidades"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/ListaEntidades.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		
 
         <action path="/solicitarRegistroPais"
                 type="edu.uag.iidis.scec.control.MCURegistrarPais"
@@ -240,6 +283,21 @@
                 validate="false">
             <forward name="exito" path="/SolicitarListarAutos.do" redirect="true"/>
         </action>
+		
+		
+		<!-- ENTIDADES -->
+		 <action path="/procesarEliminarEntidad"
+                type="edu.uag.iidis.scec.control.MCUEliminarEntidad"
+                parameter="procesarEliminarEntidad"
+                name="formaEliminarEntidad"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarEntidades.do" redirect="true"/>
+        </action>
+		
+		
+		
+		
 
         <action path="/solicitarRegistroRol"
                 type="edu.uag.iidis.scec.control.MCURegistrarRol"
@@ -266,6 +324,17 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoAuto.jsp"/>
+        </action>
+		
+		
+		<!-- ENTIDADES -->
+		 <action path="/solicitarRegistroEntidad"
+                type="edu.uag.iidis.scec.control.MCURegistrarEntidad"
+                parameter="solicitarRegistroEntidad"
+                name="formaNuevoEntidad"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEntidad.jsp"/>
         </action>
 
         <action path="/procesarRegistro"
@@ -335,6 +404,22 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroAuto.do" redirect="true"/>
        </action>
+	   
+	   <!-- ENTIDADES -->
+	   <action path="/procesarRegistroEntidad"
+                type="edu.uag.iidis.scec.control.MCURegistrarEntidad"
+                parameter="procesarRegistroEntidad"
+                name="formaNuevoEntidad"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEntidad.jsp" >
+            <forward name="cancelar" path="/solicitarListarEntidades.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistroEntidad.do" redirect="true"/>
+       </action>
+	   
+	   
+	   
 
        <!--cambios-->
         <action path="/getImage"
@@ -387,6 +472,20 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/Buscar.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+		
+		
+		<!-- ENTIDADES -->
+		 <action path="/ListarEntidad"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="buscarEstado"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/Buscar.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
 
         <action path="/BuscarLugares"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
