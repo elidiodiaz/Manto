@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="edu.uag.iidis.scec.modelo.State"
+           table="States"
+           dynamic-update="false"
+           dynamic-insert="false">
+
+        <id name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null" >
+            <generator class="increment">
+            </generator>
+        </id>
+
+        <property name="nombre"
+			column="Nombre"
+            type="java.lang.String"
+            not-null="true"
+            unique="true" />
+
+        <property name="calidad"
+			column="Calidad"
+            type="java.lang.Long" />
+
+        <property name="habitantes"
+            column="Habitantes"
+            type="java.lang.String"/>
+
+        <property name="municipios"
+            column="Municipios"
+            type="java.lang.String"/>
+    </class>
+
+</hibernate-mapping>

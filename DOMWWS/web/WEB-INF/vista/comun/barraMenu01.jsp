@@ -16,11 +16,9 @@
             <td>|</td>
 			<td class="clsMenuBarItem"><a href="SolicitarListarAutos.do">Autos</td>
             <td>|</td>			
+            <td class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida</td>
+            <td>|</td>          
             <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</td>
-			<td>|</td>
-			<td class="clsMenuBarItem"><a href="ListamModulo.do">Calidad de Vida Estados</td>
-			<td>|</td>
-			<td class="clsMenuBarItem"><a href="ListaNombres.do">Nombres</td>
             <td width="100%"></td>  
         </tr>
     </table>
