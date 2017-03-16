@@ -19,6 +19,8 @@
             <td class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida</td>
             <td>|</td>          
             <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</td>
+			<td class="clsMenuBarItem"><a href="solicitarListarEntidades.do">Nombres</td>
+			
             <td width="100%"></td>  
         </tr>
     </table>
