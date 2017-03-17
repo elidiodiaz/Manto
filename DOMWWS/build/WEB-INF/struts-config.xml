@@ -90,7 +90,33 @@
                    type="edu.uag.iidis.scec.vista.FormaEliminarAuto">
         </form-bean>
     </form-beans>
-
+                        <!-- Calidad de vida -->
+    <form-beans>
+        <form-bean name="formaNuevoState"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoState">
+        </form-bean>
+        <form-bean name="formaListadoStates"
+                   type="edu.uag.iidis.scec.vista.FormaListadoStates">
+        </form-bean>
+        <form-bean name="formaEliminarState"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarState">
+        </form-bean>
+    </form-beans>
+	
+	 <!-- Nombres -->
+	 <form-beans>
+        <form-bean name="formaNuevoEntidad"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoEntidad">
+        </form-bean>
+        <form-bean name="formaListadoEntidades"
+                   type="edu.uag.iidis.scec.vista.FormaListadoEntidades">
+        </form-bean>
+        <form-bean name="formaEliminarEntidad"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarEntidad">
+        </form-bean>
+    </form-beans>
+	
+	
 
     <!-- Definici�n de Global Forward -->
     <global-forwards>
@@ -165,10 +191,32 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoAutos.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-									<!-- AUTOS
-		<action path="/SolicitarListarAutos"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=Autos.jsp" />
-										-->
+                                    <!-- CALIDAD DE VIDA -->
+        <action path="/solicitarListarStates"
+                type="edu.uag.iidis.scec.control.MCUListarStates"
+                parameter="solicitarListarStates"
+                name="formaListadoStates"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoStates.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>	
+
+
+		<!-- Nombres -->
+		<action path="/solicitarListarEntidades"
+                type="edu.uag.iidis.scec.control.MCUListarEntidades"
+                parameter="solicitarListarEntidades"
+                name="formaListadoEntidades"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoEntidades.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+
+
+		
 		<action path="/ListarEstados"
                 type="edu.uag.iidis.scec.control.MCUListarEstados"
                 parameter="buscarEstado"
@@ -189,7 +237,33 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/ListaAutos.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
+                                    <!-- CALIDAD DE VIDA -->
 
+        <action path="/ListarStates"
+                type="edu.uag.iidis.scec.control.MCUListarStates"
+                parameter="buscarState"
+                name="formaListadoStates"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/ListaStates.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		<!-- Nombres -->
+		<action path="/ListarEntidades"
+                type="edu.uag.iidis.scec.control.MCUListarEntidades"
+                parameter="buscarEntidad"
+                name="formaListadoEntidades"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/ListaEntidades.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		
+		
         <action path="/solicitarRegistroPais"
                 type="edu.uag.iidis.scec.control.MCURegistrarPais"
                 parameter="solicitarRegistroPais"
@@ -240,7 +314,29 @@
                 validate="false">
             <forward name="exito" path="/SolicitarListarAutos.do" redirect="true"/>
         </action>
-
+                                    <!-- CALIDAD DE VIDA -->
+        <action path="/procesarEliminarState"
+                type="edu.uag.iidis.scec.control.MCUEliminarState"
+                parameter="procesarEliminarState"
+                name="formaEliminarState"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarStates.do" redirect="true"/>
+        </action>
+		
+		
+		<!-- Nombres -->
+		<action path="/procesarEliminarEntidad"
+                type="edu.uag.iidis.scec.control.MCUEliminarEntidad"
+                parameter="procesarEliminarEntidad"
+                name="formaEliminarEntidad"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarEntidades.do" redirect="true"/>
+        </action>
+		
+		
+		
         <action path="/solicitarRegistroRol"
                 type="edu.uag.iidis.scec.control.MCURegistrarRol"
                 parameter="solicitarRegistroRol"
@@ -267,7 +363,27 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoAuto.jsp"/>
         </action>
-
+                                        <!-- CALIDAD DE VIDA -->
+        <action path="/solicitarRegistroState"
+                type="edu.uag.iidis.scec.control.MCURegistrarState"
+                parameter="solicitarRegistroState"
+                name="formaNuevoState"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoState.jsp"/>
+        </action>
+		
+		<!-- Nombres -->
+		<action path="/solicitarRegistroEntidad"
+                type="edu.uag.iidis.scec.control.MCURegistrarEntidad"
+                parameter="solicitarRegistroEntidad"
+                name="formaNuevoEntidad"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEntidad.jsp"/>
+        </action>
+		
+		
         <action path="/procesarRegistro"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                 parameter="procesarRegistro"
@@ -335,7 +451,34 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroAuto.do" redirect="true"/>
        </action>
-
+                                <!-- CALIDAD DE VIDA -->
+       <action path="/procesarRegistroState"
+                type="edu.uag.iidis.scec.control.MCURegistrarState"
+                parameter="procesarRegistroState"
+                name="formaNuevoState"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoState.jsp" >
+            <forward name="cancelar" path="/solicitarListarStates.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistroState.do" redirect="true"/>
+       </action>
+	   
+	   <!-- Nombres -->
+	   <action path="/procesarRegistroEntidad"
+                type="edu.uag.iidis.scec.control.MCURegistrarEntidad"
+                parameter="procesarRegistroEntidad"
+                name="formaNuevoEntidad"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEntidad.jsp" >
+            <forward name="cancelar" path="/solicitarListarEntidades.do" redirect="true"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistroEntidad.do" redirect="true"/>
+       </action>
+	   
+	   
+	   
        <!--cambios-->
         <action path="/getImage"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
@@ -387,7 +530,31 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/Buscar.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
-
+                                    <!-- CALIDAD DE VIDA -->
+        <action path="/ListarState"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="buscarEstado"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/Buscar.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		<!-- Nombres -->
+		<action path="/ListarEntidad"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="buscarEstado"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/Buscar.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+		
+		
+		
         <action path="/BuscarLugares"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
                 parameter="buscarLugar"
