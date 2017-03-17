@@ -44,7 +44,7 @@
     <!-- Configuración de Struts -->
 
 
-<!-- Action Servlet Mapping    -->
+<!-- Action Servlet Mapping    --> 
 
     <servlet>
         <servlet-name>action</servlet-name>
@@ -54,9 +54,9 @@
             <param-value>/WEB-INF/struts-config.xml</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
- 
+
         <multipart-config>
-<!--  50MB max   -->
+<!--  50MB max  -->
             <max-file-size>52428800</max-file-size>
             <max-request-size>52428800</max-request-size>
             <file-size-threshold>0</file-size-threshold>
@@ -70,7 +70,7 @@
         <url-pattern>/servicios.dd</url-pattern>
     </servlet-mapping>
 
-
+ 
 
     <!-- Action Servlet Mapping  -->
 
