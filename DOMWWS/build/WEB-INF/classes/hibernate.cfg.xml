@@ -49,6 +49,8 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Auto.hbm.xml"/>
 		<mapping resource="edu/uag/iidis/scec/modelo/Pais.hbm.xml"/>
 		<mapping resource="edu/uag/iidis/scec/modelo/Lugar.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/State.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Entidad.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Recomendacion.hbm.xml"/>
     </session-factory>
 

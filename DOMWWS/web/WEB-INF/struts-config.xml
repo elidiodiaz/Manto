@@ -89,6 +89,9 @@
         <form-bean name="formaEliminarAuto"
                    type="edu.uag.iidis.scec.vista.FormaEliminarAuto">
         </form-bean>
+        <form-bean name="formaModificarAuto"
+                   type="edu.uag.iidis.scec.vista.FormaModificarAuto">
+        </form-bean>
     </form-beans>
                         <!-- Calidad de vida -->
     <form-beans>
@@ -185,7 +188,7 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoStates.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>									
+        </action>
 		<action path="/ListarEstados"
                 type="edu.uag.iidis.scec.control.MCUListarEstados"
                 parameter="buscarEstado"
@@ -196,7 +199,6 @@
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
 									<!-- AUTOS -->
-
 		<action path="/ListarAutos"
                 type="edu.uag.iidis.scec.control.MCUListarAutos"
                 parameter="buscarAuto"
@@ -207,7 +209,6 @@
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
         </action>
                                     <!-- CALIDAD DE VIDA -->
-
         <action path="/ListarStates"
                 type="edu.uag.iidis.scec.control.MCUListarStates"
                 parameter="buscarState"
@@ -267,6 +268,15 @@
                 validate="false">
             <forward name="exito" path="/SolicitarListarAutos.do" redirect="true"/>
         </action>
+                                    <!-- AUTOS -->
+        <action path="/procesarModificarAuto"
+                type="edu.uag.iidis.scec.control.MCUModificarAuto"
+                parameter="procesarModificarAuto"
+                name="formaModificarAuto"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/SolicitarListarAutos.do" redirect="true"/>
+        </action>
                                     <!-- CALIDAD DE VIDA -->
         <action path="/procesarEliminarState"
                 type="edu.uag.iidis.scec.control.MCUEliminarState"
@@ -293,7 +303,6 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoEstado.jsp"/>
         </action>
 										<!-- AUTOS -->
-
         <action path="/solicitarRegistroAuto"
                 type="edu.uag.iidis.scec.control.MCURegistrarAuto"
                 parameter="solicitarRegistroAuto"
@@ -301,6 +310,15 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoAuto.jsp"/>
+        </action>
+                                        <!-- AUTOS -->
+        <action path="/solicitarModificarAuto"
+                type="edu.uag.iidis.scec.control.MCUModificarAuto"
+                parameter="solicitarModificarAuto"
+                name="formaModificarAuto"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarAuto.jsp"/>
         </action>
                                         <!-- CALIDAD DE VIDA -->
         <action path="/solicitarRegistroState"
@@ -378,6 +396,18 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroAuto.do" redirect="true"/>
        </action>
+                                <!-- AUTOS -->
+        <action path="/procesarModificarAuto"
+                type="edu.uag.iidis.scec.control.MCUModificarAuto"
+                parameter="procesarModificarAuto"
+                name="formaModificarAuto"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarAuto.jsp" >
+                <forward name="cancelar" path="/solicitarListarRoles.do" redirect="true"/>
+                <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+                <forward name="volver" path="solicitarModificarAuto.do" redirect="true"/>
+        </action>
                                 <!-- CALIDAD DE VIDA -->
        <action path="/procesarRegistroState"
                 type="edu.uag.iidis.scec.control.MCURegistrarState"

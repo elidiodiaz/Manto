@@ -68,12 +68,12 @@ public final class FormaModificarAuto extends ValidatorForm {
     }
 
     public void reset(ActionMapping mapping, HttpServletRequest request) {
-        id= new Long(0);
-        nombre=null;
-        descripcion=null;
-        cantidad=0;
-        ganancias=null;
-        anio=null;
+        id= getId();
+        nombre=getNombre();
+        descripcion=getDescripcion();
+        cantidad=getCantidad();
+        ganancias=getGanancias();
+        anio=getAnio();
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
