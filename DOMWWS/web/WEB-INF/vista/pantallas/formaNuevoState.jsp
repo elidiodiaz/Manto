@@ -68,7 +68,7 @@
         </tr>
         <tr>
             <td align="right">
-                <fmt:message key="formaNuevoState.etiqueta.municipios" />
+                
                 <label for="municipios">Municipios: &nbsp; </label>
             </td>
             <td align="left">
