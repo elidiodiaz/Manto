@@ -1,6 +1,6 @@
 
 	<!-- IS: Encabezado de Pagina (Banner) -->
-	<table class="barraBanner">
+	<table class="barraBanner" style="background-color: #58D68D;">
 		<tr>	<td><img  src="images/logo-upch.png"></td>
 				<td align="center" width="100%">Administrador de Roles V2</td>
 		</tr>

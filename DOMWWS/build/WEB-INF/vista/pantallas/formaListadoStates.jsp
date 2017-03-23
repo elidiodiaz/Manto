@@ -1,6 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 <style>
 .HipervinculoAdmon{
 color:#000000;
@@ -20,8 +30,9 @@ return confirm("¿Desea eliminar el state '" + strStateName + "'?")
 -->
 </script>
 <br>
+<div class="col-md-8 col-md-offset-2">
 <font size='5'><fmt:message key="formaListadoStates.titulo" /></font>
-<table cellpadding="0" cellspacing="0" width="60%" border="0">
+<table cellpadding="0" cellspacing="0" width="60%" border="0" class="table table-hover">
     <tr>
         <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
             <a href="solicitarRegistroState.do" class="HipervinculoAdmon">Agregar nueva calidad de vida...</a>
@@ -64,3 +75,4 @@ return confirm("¿Desea eliminar el state '" + strStateName + "'?")
         <td colspan="4" align="right" style="padding-top:25px;"><b>Total:</b> ${formaListadoStates.contador}</td>
     </tr>
 </table>
+</div>
