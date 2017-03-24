@@ -1,5 +1,8 @@
 	<!-- Inicio Secci�n - Pie de P�gina -->
 	<!-- Inicio Seccion - Barra Menu Pie de P�gina -->
+
+<footer class="footer">
+
 	<table class="barraPie">
 		<tr>
 			<td align="center">
@@ -20,4 +23,5 @@
 		</tr>
 	</table>
 
+</footer>
 	<!-- Fin de Secci�n - Pie de p�gina -->
