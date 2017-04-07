@@ -18,16 +18,9 @@
       <li class="clsMenuBarItem"><a href="irInicio">Home</a></li>
       <li class="clsMenuBarItem"><a href="solicitarListarRoles.do">Roles</a></li>
       <li class="clsMenuBarItem"><a href="SolicitarListarAutos.do">Autos</a></li>
-      <li class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida </a></li>
+      <li class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida</a></li>
       <li class="clsMenuBarItem"><a href="solicitarListarEntidades.do">Nombres</a></li>      
     </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-
-      <li><a href="irLogin.dd"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-
   </div>
 </nav>
 

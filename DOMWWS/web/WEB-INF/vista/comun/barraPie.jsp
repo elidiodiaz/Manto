@@ -10,27 +10,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <footer class="footer">
-<hr/>
-	<div class="container">
+
+	<table class="barraPie">
 		<tr>
 			<td align="center">
-				Acerca de | Ayuda | Hacer Recomendacion | Reportar Problema|
+				Acerca de | Ayuda | Hacer Recomendaci�n | Reportar Problema|
 
 			</td>
 		</tr>
-	
+	</table>
 	<!-- Fin Seccion - Barra Menu Pie de P�gina -->
 
-	
+	<table class="barraDerechos">
 		<tr>
-			<td align="center" style="font-size: 12px">
-				Copyright 2014. UPCHIAPAS    Todos los derechos reservados.
+			<td align="center">
+				Copyright � 2014. UPCHIAPAS    Todos los derechos reservados.
 				<br> Jesus Guillermo | Jose Alberto | Elidio Diaz Lopez
 				<br> 20 De Enero de 2017
 			</td>
 		</tr>
-	</div>
-	
+	</table>
 
 </footer>
 	<!-- Fin de Secci�n - Pie de p�gina -->
