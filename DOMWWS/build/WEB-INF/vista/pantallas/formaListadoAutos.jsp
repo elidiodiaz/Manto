@@ -31,8 +31,7 @@ return confirm("¿Desea eliminar el auto '" + strAutoName + "'?")
 <br>
 <div class="col-md-8 col-md-offset-2">
 <font size='5'><fmt:message key="formaListadoAutos.titulo" /></font>
-
-<table cellpadding="0" cellspacing="0" width="50%" border="0" class="table table-hover ">
+<table cellpadding="0" cellspacing="0" width="60%" border="0" class="table table-hover">
     <tr>
         <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
             <a href="solicitarRegistroAuto.do" class="HipervinculoAdmon">Agregar nuevo auto...</a>

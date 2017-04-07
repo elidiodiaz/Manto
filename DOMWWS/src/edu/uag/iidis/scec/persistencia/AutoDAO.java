@@ -177,7 +177,7 @@ public class AutoDAO {
         }
 
         try {
-            String hql = "from Autos where nombre like '"+nombreAuto+"%'";
+            String hql = "from Autos where nombre like '"+nombreAuto+"'";
 
             if (log.isDebugEnabled()) {
                  log.debug(hql + nombreAuto);
@@ -210,7 +210,7 @@ public class AutoDAO {
         }
     }
 
-    public boolean existeAutoModificar(String nombreAuto ) throws ExcepcionInfraestructura {
+    public boolean existeAutoModificar(String nombreAuto) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
             log.debug(">existeRol(nombreRol)");

@@ -2,11 +2,20 @@
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     <br>
     <font size='5'><fmt:message key="formaNuevaPersona.titulo" /></font>
 
-    <form id="forma" action="procesarRegistro.do" method="post">
+    <form id="forma" action="procesarRegistro.do" method="post" class="form-group">
         <table>
             <tr>
                 <td colspan="2">
@@ -22,7 +31,8 @@
                            name="prefijo" 
                            size="12" 
                            maxlength="12" 
-                           value="${formaNuevaPersona.prefijo}" />
+                           value="${formaNuevaPersona.prefijo}"
+                           class="form-control" />
                 </td>
             </tr>
             <tr>
@@ -34,7 +44,8 @@
                            name="nombre" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.nombre}" />
+                           value="${formaNuevaPersona.nombre}"
+                           class="form-control" />
                 </td>
             </tr>
             <tr>
@@ -46,7 +57,8 @@
                            name="apellidoPaterno" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.apellidoPaterno}" />
+                           value="${formaNuevaPersona.apellidoPaterno}" 
+                           class="form-control"/>
                 </td>
             </tr>
             <tr>
@@ -58,10 +70,11 @@
                            name="apellidoMaterno" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.apellidoMaterno}" />
+                           value="${formaNuevaPersona.apellidoMaterno}" 
+                           class="form-control"/>
                 </td>
             </tr>
-      <!---    /cidades --->      
+            
             <tr>
                 <td align="right">
                     <fmt:message key="formaNuevaPersona.etiqueta.ciudades" />
@@ -87,7 +100,8 @@
                            name="nombreUsuario" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.nombreUsuario}" />
+                           value="${formaNuevaPersona.nombreUsuario}" 
+                           class="form-control"/>
                 </td>
             </tr>
             <tr>
@@ -99,7 +113,8 @@
                            name="claveAcceso" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.claveAcceso}" />
+                           value="${formaNuevaPersona.claveAcceso}"
+                           class="form-control" />
                 </td>
             </tr>
             <tr>
@@ -111,25 +126,30 @@
                            name="claveAccesoConfirmacion" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaNuevaPersona.claveAccesoConfirmacion}" />
+                           value="${formaNuevaPersona.claveAccesoConfirmacion}" 
+                           class="form-control"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
                     <input type="submit" 
                            name="submit"
-                           value="Agregar y terminar"/>
+                           value="Agregar y terminar"
+                           class="btn btn-default"/>
                     <input type="submit" 
                            name="submit"
                            value="Agregar y volver"
-                           onclick="forma.action='procesarRegistro.do?volver=si'"/>
+                           onclick="forma.action='procesarRegistro.do?volver=si'"
+                           class="btn btn-default"/>
                     <input type="button"
                            value="Reset"
-                           onclick="location.href='solicitarRegistro.do'" />
+                           onclick="location.href='solicitarRegistro.do'" 
+                           class="btn btn-default"/>
                     <input type="submit" 
                            name="org.apache.struts.taglib.html.CANCEL" 
                            value="Cancelar" 
-                           onclick="bCancel=true;">    
+                           onclick="bCancel=true;"
+                           class="btn btn-default">    
                 </td>
             </tr>
         </table>

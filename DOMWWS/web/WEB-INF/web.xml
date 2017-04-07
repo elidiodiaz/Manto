@@ -16,8 +16,7 @@
         <param-value>edu.uag.iidis.scec.vista.scecRB</param-value>
     </context-param>
 
-    <!-- Configuración del Filtro  
-
+    <!-- Configuración del Filtro  -->
 <filter>
     <filter-name>userAccessFilter</filter-name>
     <filter-class> 
@@ -38,7 +37,8 @@
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
 
- -->
+
+ 
 
   
     <!-- Configuración de Struts -->
