@@ -78,6 +78,7 @@ public class ManejadorAutos {
         } finally {
             HibernateUtil.closeSession();
         }
+
     }
 
     public int crearAuto(Auto auto) {
@@ -113,36 +114,25 @@ public class ManejadorAutos {
         return resultado;
     }
 
-    public int modificarAuto(Auto auto) {
-        int resultado;
-
+    public void modificarAuto(Long id) {
         if (log.isDebugEnabled()) {
-            log.debug(">guardarAuto(auto)");
+            log.debug(">modificarAuto(auto)");
         }
-
         try {
             HibernateUtil.beginTransaction();
-
-            if (dao.existeAuto(auto.getNombre())) {
-                resultado = 1; // Excepción. El nombre de ciudad ya existe
+            Auto auto = dao.buscarPorId(id, true);
+            if (auto != null) {
                 dao.hazModificar(auto);
-            } else {
-                //dao.hazPersistente(auto);
-                resultado = 0; // Exito. El ciudad se creo satisfactoriamente.
             }
-
             HibernateUtil.commitTransaction();
-
         } catch (ExcepcionInfraestructura e) {
             HibernateUtil.rollbackTransaction();
-
             if (log.isWarnEnabled()) {
                 log.warn("<ExcepcionInfraestructura");
             }
-            resultado = 2;    // Excepción. Falla en la infraestructura
         } finally {
             HibernateUtil.closeSession();
         }
-        return resultado;
+
     }
 }
