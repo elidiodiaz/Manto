@@ -10,8 +10,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <footer class="footer">
+<<<<<<< HEAD
 <hr/>
 	<div class="container">
+=======
+
+	<table class="barraPie">
+>>>>>>> 3ed0f4a1c00517c008c86bff344076b5b36d4e66
 		<tr>
 			<td align="center">
 				Acerca de | Ayuda | Hacer Recomendacion | Reportar Problema|

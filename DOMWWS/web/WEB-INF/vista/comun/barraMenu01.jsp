@@ -18,6 +18,7 @@
       <li class="clsMenuBarItem"><a href="irInicio">Home</a></li>
       <li class="clsMenuBarItem"><a href="solicitarListarRoles.do">Roles</a></li>
       <li class="clsMenuBarItem"><a href="SolicitarListarAutos.do">Autos</a></li>
+<<<<<<< HEAD
       <li class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida </a></li>
       <li class="clsMenuBarItem"><a href="solicitarListarEntidades.do">Nombres</a></li>      
     </ul>
@@ -28,6 +29,11 @@
       <li><a href="irLogin.dd"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
 
+=======
+      <li class="clsMenuBarItem"><a href="solicitarListarStates.do">Calidad de Vida</a></li>
+      <li class="clsMenuBarItem"><a href="solicitarListarEntidades.do">Nombres</a></li>      
+    </ul>
+>>>>>>> 3ed0f4a1c00517c008c86bff344076b5b36d4e66
   </div>
 </nav>
 
